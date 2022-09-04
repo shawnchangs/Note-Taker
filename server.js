@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 var uuid = require('uuid')
-const notes = require('./db/db.json')
+const notes = require('./Develop/db/db.json')
 
 const PORT = process.env.PORT || 3001;
 const app = express();
