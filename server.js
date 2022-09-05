@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static middleware for serving assets in the public folder
-app.use(express.static("public"));
+app.use(express.static("./public"));
 
 // Route to notes.html file
 app.get('/notes', (req, res) => {
@@ -28,7 +28,7 @@ app.get("/api/notes", (req, res) => {
 // API route will receive a new note and save to the db.json file
 app.post('/api/notes', (req, res) => {
     const notes = JSON.parse(fs.readFileSync("./db/db.json"));
-    req.body.id = uuid()
+    req.body.id = uuid();
     notes.push(req.body);
     fs.writeFileSync("./db/db.json", JSON.stringify(notes))
     res.json(notes);
@@ -49,5 +49,5 @@ app.delete("/api/notes/:id", (req, res) => {
 
 // Listen for connections
 app.listen(PORT, () => {
-    console.log(`Aapp listening at http://localhost:${PORT}`);
+    console.log(`App listening at http://localhost:${PORT}`);
   });
