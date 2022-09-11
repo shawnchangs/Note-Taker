@@ -30,9 +30,7 @@ const getNotes = () =>
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      //DO WE NEED TO IMPORT THE FILE DB.JSON HERE?
     },
-    //body: JSON.stringify(noteData)
   });
 
 const saveNote = (note) =>
