@@ -7,14 +7,11 @@ const app = express();
 
 const noteData = require('./db/db.json')
 
-
 // Middleware for parsing urlencoded form data, application/json
 // Static middleware for serving assets in the public folder
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.json());
-
-
 
 // API route reads the db.json file and returns all saved notes as json
 // Routes notes and index 
